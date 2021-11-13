@@ -9,7 +9,7 @@ Chức năng
 - Crud danh sách và thẻ , thêm thông tin tag, set deadline, thông tin nhắc
 - Comment task
 - Có kéo thả"
-- 
+
 ### USER STORY
 
 - Là người dùng, tôi muốn đăng ký/đăng nhập bằng email và password
