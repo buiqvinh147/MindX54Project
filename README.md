@@ -1,4 +1,4 @@
-# MindX54Project
+### MindX54Project
 ## NHÓM QUANG VINH, MINH ĐỨC, VIẾT HOÀNG
 Dự án làm trang web quản lý công việc (tương tự trello)
 
