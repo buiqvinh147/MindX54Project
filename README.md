@@ -14,7 +14,7 @@ Chức năng
 - Là người dùng, tôi muốn thêm/sửa/xoá các task(tạo deadline và chia task cho các member trong team,….)
 - Là người dùng, tôi muốn xem mô tả chi tiết khi click vào các task
 - Là người dùng, tôi muốn tạo các column trạng thái(to do/in progress/need adjusting/review/done/….) và kéo thả các task qua các cột trạng thái để nắm rõ tiến độ công việc
-
+- là người dùng, tôi muốn xem task nào đã quá deadline (quá deadline sẽ báo đỏ).
 ## Thiết kế cơ sở dữ liệu
 Thư mục modules gồm có auth, board, card, list và activiti.
 <img width="1021" alt="trello-clone-erd" src="https://user-images.githubusercontent.com/81417700/142159336-136287c9-b4bb-4067-85c7-3165967527ec.png">
