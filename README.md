@@ -1,6 +1,6 @@
 # MindX54Project
 ### NHÓM QUANG VINH, MINH ĐỨC, VIẾT HOÀNG
-Dự án làm trang web quản lý công việc (giống trello)
+Dự án làm trang web quản lý công việc (tương tự trello)
 
 Chức năng
 
@@ -19,4 +19,128 @@ Chức năng
 
 ### Thiết kế cơ sở dữ liệu
 
-Thư mục modules gồm có auth, board, card và list.
+Thư mục modules gồm có auth, board, card, list và activiti.
+<img width="1021" alt="trello-clone-erd" src="https://user-images.githubusercontent.com/81417700/142159336-136287c9-b4bb-4067-85c7-3165967527ec.png">
+## Data Schema 
+- User
+{
+ username: {
+      type: String,
+      unique: true
+    },
+    displayName: {
+      type: String,
+      required: true
+    },
+    imageUrl: {
+      type: String,
+      required: true
+    },
+    password: {
+      type: String,
+      required: true
+    },
+  }, {
+    timestamps: true
+  };
+
+
+- Board 
+{
+ name: {
+      type: String,
+      required: true
+    },
+    background: {
+      type: String,
+      required: true
+    },
+    ownerId: {
+      type: Schema.Types.ObjectId,
+      ref: 'users'
+    },
+    memberIds: [{
+      type: Schema.Types.ObjectId,
+      ref: 'users'
+    }],
+  }, {
+    timestamps: true
+  };
+
+- List
+ {
+  name: {
+      type: String,
+      required: true
+    },
+    order: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    archived: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    boardId: {
+      type: Schema.Types.ObjectId,
+      ref: 'boards'
+    },
+  }, {
+    timestamps: true
+  };
+
+- Card
+{
+  title: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String
+    },
+    order: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    archived: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    listId: {
+      type: Schema.Types.ObjectId,
+      ref: 'lists'
+    },
+    boardId: {
+      type: Schema.Types.ObjectId,
+      ref: 'boards'
+    },
+    members: [{
+      type: Schema.Types.ObjectId,
+      ref: 'users'
+    }],
+  }, {
+    timestamps: true
+  };
+
+- Activiti
+{
+  text: {
+      type: String,
+      required: true
+    },
+    userId: {
+      type: Schema.Types.ObjectId,
+      required: true
+    },
+    boardId: {
+      type: Schema.Types.ObjectId,
+      ref: 'boards'
+    },
+  }, {
+    timestamps: true
+  };
+
